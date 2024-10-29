@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "bar",
+    "slug": "bar",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/image/bar_icone.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/image/bar_icone.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#202124"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/image/bar_icone.png",
+        "backgroundColor": "#202124"
+      },
+      "package": "com.madrugao.bar"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "projectId"
+      }
+    },
+    "owner": "madrugao",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/projectId"
+    }
+  }
+}

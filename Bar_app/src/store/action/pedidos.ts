@@ -1,0 +1,142 @@
+
+import axios from 'axios'
+import {SET_PEDIDOS} from './actionTypes'
+import { Dispatch } from 'redux'
+//auth
+import { db } from '../auth';
+
+import { collection,doc,onSnapshot,getDocs,query, where, updateDoc, arrayUnion, arrayRemove} from "firebase/firestore"; 
+import { setMessage } from './message';
+
+//onSnapshot para atualizar caso alguma informacao mude 
+export const startPedidosListener = () => {
+  return (dispatch: any) => {
+    try{
+      const q = query(collection(db, "pedidos"));
+      onSnapshot(q, (snapshot) => {
+        const pedidos: any[] = [];
+          snapshot.forEach((doc) => {
+              const rawPedidos = doc.data();
+              pedidos.push({...rawPedidos,
+                id: doc.id}) 
+            }); 
+        // console.log(pedidos)
+        if(pedidos.length === 1) {
+          onDisplayNotification()
+        }
+        pedidos.sort((a:any, b:any) => a.ordem - b.ordem)
+        dispatch(setPedidos(pedidos));
+        console.log("pedidos onsnap")
+      }); 
+    }catch (e) {
+        // console.error("Error fetching documents: ", e);
+        dispatch(setMessage({
+          title: 'Error',
+          text: 'Ocorreu um erro ao contatar o servidor'
+        }))
+      }
+   
+  };
+};
+//atualizar array de pedidos  array_bebidas
+export const fetchPedidos_ordem_adicionar = (id_item:string,id_pedido:string) => {
+  return async (dispatch: any) => {
+    try{
+
+      const q = doc(db, "pedidos",id_pedido);
+
+      await updateDoc(q, {
+        array_bebidas: arrayUnion(id_item)
+      });
+
+    }catch (e) {
+        // console.error("Error fetching documents: ", e);
+        dispatch(setMessage({
+          title: 'Error',
+          text: 'Ocorreu um erro ao contatar o servidor'
+        }))
+      }
+   
+  };
+};
+//atualizar array de pedidos  array_bebidas
+export const fetchPedidos_ordem_retirar = (id_item:string,id_pedido:string) => {
+  return async (dispatch: any) => {
+    try{
+
+      const q = doc(db, "pedidos",id_pedido);
+
+      await updateDoc(q, {
+        array_bebidas: arrayRemove(id_item)
+      });
+
+    }catch (e) {
+        // console.error("Error fetching documents: ", e);
+        dispatch(setMessage({
+          title: 'Error',
+          text: 'Ocorreu um erro ao contatar o servidor'
+        }))
+      }
+   
+  };
+};
+
+//chamada assyncrona com o firebase get () com QUERY e WHERE retornando uma consulta especifica
+
+// chamda apra atualizar o status_chapeiro
+export const fetchatualizar_pedido = (id:any) => {
+  return async (dispatch:any)=>{
+
+    const pedidoRef = doc(db, 'pedidos', id);
+    await updateDoc(pedidoRef, {
+      status_bar: false
+    });
+    
+  }
+}
+// definir no redux os pedidos ACTION
+export const setPedidos =  (pedidos:any) => {
+  return { 
+      type:SET_PEDIDOS,
+      payload:pedidos
+  }
+
+}
+
+
+/////////////////notificacao ///////////////////////////////////
+import * as Notifications from 'expo-notifications';
+
+async function onDisplayNotification() {
+  try {
+    // Solicitar permissões (necessário para iOS)
+    await Notifications.requestPermissionsAsync();
+
+    // Criar um canal (necessário para Android)
+    const channelId = 'default';
+    await Notifications.setNotificationChannelAsync(channelId, {
+      name: 'Default Channel',
+      importance: Notifications.AndroidImportance.HIGH,
+    });
+
+    // Exibir uma notificação
+    await Notifications.scheduleNotificationAsync({
+      content: {
+        title: 'Novo Pedido',
+        body: 'Vamos começar!',
+      },
+      trigger: null, // para exibir imediatamente, ou você pode definir um gatilho específico
+    });
+
+    console.log('Notificação enviada com sucesso.');
+  } catch (error) {
+    console.error('Erro ao enviar notificação:', error);
+  }
+}
+
+
+/////////////////////////////////////////////////////////////
+
+  
+
+

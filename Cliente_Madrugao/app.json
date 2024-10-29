@@ -1,0 +1,86 @@
+{
+  "expo": {
+    "name": "Madrugão Lanches",
+    "slug": "madrugao",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logos/madrugao_logo_branco.png",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Permitir Madrugão acessar sua Câmera"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/logos/madrugao_logo_branco.png",
+          "color": "#f8fafd",
+          "sounds": [
+            "./assets/notification/notificacaomadrugao.wav"
+          ]
+        }
+      ],
+      [
+        "@react-native-firebase/app",
+        "@react-native-firebase/analytics"
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Permitir Madrugão Acessar seu Microfone"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
+    ],
+    "splash": {
+      "image": "./assets/fundo_capa/splash_i.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#202124"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.madrugao.madrugao",
+      "googleServicesFile": "./GoogleService-Info.plist"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logos/madrugao_logo_branco.png",
+        "backgroundColor": "#3C4043"
+      },
+      "package": "com.madrugao.madrugao",
+      "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "com.google.android.gms.permission.AD_ID"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "projectId"
+      }
+    },
+    "owner": "madrugao",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/projectId"
+    },
+    "scheme": "com.madrugao.madrugao"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "Garçom",
+    "slug": "garcom-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/garcom_icon.png",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/garcom_icon.png",
+          "color": "#f8fafd"
+        }
+      ]
+    ],
+    "splash": {
+      "image": "./assets/garcom_splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2D2F31"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.madrugao.garcomapp",
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/garcom_icon.png",
+        "backgroundColor": "#2D2F31"
+      },
+      "package": "com.madrugao.garcomapp",
+      "runtimeVersion": "1.0.0",
+	    "googleServicesFile": "./google-services.json"
+
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "projectId"
+      }
+    },
+    "owner": "madrugao",
+    "updates": {
+      "url": "https://u.expo.dev/projectId"
+    },
+    "scheme": "com.madrugao.garcomapp"
+  }
+}

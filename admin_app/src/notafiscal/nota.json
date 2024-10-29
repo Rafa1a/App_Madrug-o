@@ -1,0 +1,42 @@
+{
+    "cnpj_emitente"         : "48674355000192",
+    "data_emissao"          : "2024-03-30T13:47:08.626Z",
+    "natureza_operacao"     : "VENDA AO CONSUMIDOR",
+    "presenca_comprador"    : "1",
+    "modalidade_frete"      : "9",
+    "local_destino"         : "1",
+    
+    "cpf_destinatario"      : "12345678901",
+
+    "itens" : [
+        {
+        "numero_item":"1",
+        "codigo_ncm":"19059090",
+        "codigo_produto":"000001",
+        "descricao":"NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+        "quantidade_comercial":"1",
+        "quantidade_tributavel":"1",
+
+        "cfop":"5101",
+
+        "valor_unitario_tributavel":"10",
+        "valor_unitario_comercial":"10",
+        "valor_bruto" : "10",
+        
+        "unidade_comercial":"un",
+        "unidade_tributavel":"un",
+        
+        "icms_origem":"0",
+        "icms_situacao_tributaria":"102"
+        }
+    ],
+    "formas_pagamento":[
+        {
+           "forma_pagamento":"01",
+           "valor_pagamento":"10.00"
+        }
+     ]
+}
+
+
+

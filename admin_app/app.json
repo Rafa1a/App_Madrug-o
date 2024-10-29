@@ -1,0 +1,66 @@
+{
+  "expo": {
+    "name": "Admin",
+    "slug": "admin",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "O aplicativo acessa suas fotos para permitir que você as compartilhe."
+        }
+      ]
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/image/icone.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/image/icone.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#202124"
+    },
+    "assetBundlePatterns": [
+      "assets/*",
+      "path/to/expo-fonts.js"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/image/icone.png",
+        "backgroundColor": "#2D2F31"
+      },
+      "package": "com.madrugao.testambiente",
+      "runtimeVersion": "1.0.0",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": {
+            "mimeType": "application/pdf"
+          },
+          "category": [
+            "CATEGORY_DEFAULT"
+          ],
+          "priority": 1
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "projectId"
+      }
+    },
+    "owner": "madrugao",
+    "updates": {
+      "url": "https://u.expo.dev/projectId",
+      "fallbackToCacheTimeout": 0
+    }
+  }
+}

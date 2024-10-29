@@ -1,0 +1,18 @@
+#DE6F00 //laranja
+#E81000 //vermelho
+#B20ACC //rosa
+#7FD4F5 //azul claro
+#0E00E3 //azul escuro
+
+brancos
+#f4f7fc // branco + azul
+#ffffff
+#e8f0fe // branco ++ azul
+#f8fafd // pastel
+
+pretos
+#252A32 // PRETO + azul
+#202124 // PRETO ESCURO + azul
+#3C4043 // CINZA
+#2D2F31 // CINZA ESCURO
+#28292A // CINZA + ESCURO
