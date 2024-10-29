@@ -23,14 +23,14 @@ Este projeto oferece uma solução completa para o **Madrugão Lanches**, visand
 * Telas Iniciais:
     ![Madrugão Lanches](./docs/base_google_play.png)
 * Demonstração da IA Atendente: 
-    [![Madrugão Lanches](./docs/video_IA.mp4)](./docs/video_IA.mp4) 
+    [![Madrugão Lanches](./docs/video_ia_img.png)](https://youtu.be/2uQl_zJOns4) 
 
 **App Admin:**
 
 * Gerenciamento de Garçons:
-    [![Madrugão Lanches](./docs/controle_Garçons.mp4)](./docs/controle_Garçons.mp4)
+    [![ADMIN Madrugão Lanches](./docs/video_garcon_img.png)](https://youtu.be/KmeEnEI4L08)
 * Controle de Caixa:
-    [![Madrugão Lanches](./docs/Controle%20de%20caixa.mp4.mp4)](./docs/Controle%20de%20caixa.mp4.mp4)
+    [![ADMIN Madrugão Lanches](./docs/video_caixa_img.png)](https://youtu.be/0iKZZYQ4d3A) 
 
 ---
 
