@@ -1,5 +1,5 @@
 # Madrugão Lanches - Sistema de Atendimento Integrado
-
+ 
 Bem-vindo à documentação do projeto **Madrugão Lanches**, desenvolvido para otimizar o atendimento e a gestão de pedidos na empresa de Tupã. Essa documentação apresenta uma visão geral do projeto, mas devido a restrições de tempo, pode não ser tão completa quanto o ideal. 
 O app do CLiente esta no Google Play : [Madrugão Lanches](https://play.google.com/store/apps/details?id=com.madrugao.madrugao)
 
